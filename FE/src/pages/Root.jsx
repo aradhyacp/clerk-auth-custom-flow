@@ -10,6 +10,7 @@ const Root = () => {
       <div className="">Welcome to Clerk Auth test for custom flow</div>
       <Button><Link to="/signup">Go to sign up / register</Link></Button>
       <Button><Link to="/login">Go to Login</Link></Button>
+      <Button><Link to="/dashboard">Go to DashBoard</Link></Button>
     </Card>
     </div>
   )
