@@ -64,6 +64,8 @@ const SignUp = () => {
       setIsLoading(false);
     }
   };
+
+  
   const onPressVerify = async (e) => {
     e.preventDefault();
 
