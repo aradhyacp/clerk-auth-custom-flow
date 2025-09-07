@@ -1,7 +1,7 @@
 create table public.users (
-  id uuid primary key,
+  id text primary key,
   email text unique not null,
-  role text not null default 'user',
+  role text default 'user',
   created_at timestamp with time zone default now()
 );
 
