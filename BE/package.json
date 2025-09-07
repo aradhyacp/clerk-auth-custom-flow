@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@clerk/express": "^1.7.29",
+    "@supabase/supabase-js": "^2.57.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "localtunnel": "^2.0.2",
+    "ngrok": "^5.0.0-beta.2",
+    "svix": "^1.76.1"
+  }
+}
