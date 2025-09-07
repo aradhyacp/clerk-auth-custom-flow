@@ -65,7 +65,6 @@ const SignUp = () => {
     }
   };
 
-  
   const onPressVerify = async (e) => {
     e.preventDefault();
 
@@ -259,7 +258,9 @@ const SignUp = () => {
                   </div>
                 </Button>
               ) : (
-                <Button type="submit" className="w-full">Verify Email</Button>
+                <Button type="submit" className="w-full">
+                  Verify Email
+                </Button>
               )}
             </form>
           )}

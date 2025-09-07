@@ -8,7 +8,6 @@ const Login = () => {
   const [isloading, setIsloading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  // need to ask how to pass props and functions
   if (!isLoaded) {
     return null;
   }
@@ -35,7 +34,7 @@ const Login = () => {
       console.error("error", err.errors[0].message);
       setError(err.errors[0].message);
     } finally {
-      setIsloading(false)
+      setIsloading(false);
     }
 
     console.log(email, password);
@@ -43,7 +42,11 @@ const Login = () => {
   return (
     <div className="bg-muted flex min-h-svh flex-col items-center justify-center p-6 md:p-10">
       <div className="w-full max-w-sm md:max-w-3xl">
-        <LoginForm handleSubmit={handleSubmit} isloading={isloading} errorState={{error,setError}}/>
+        <LoginForm
+          handleSubmit={handleSubmit}
+          isloading={isloading}
+          errorState={{ error, setError }}
+        />
       </div>
     </div>
   );
