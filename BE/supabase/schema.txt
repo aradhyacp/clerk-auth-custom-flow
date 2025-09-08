@@ -5,3 +5,19 @@ create table public.users (
   created_at timestamp with time zone default now()
 );
 
+create table polls (
+  id serial primary key,
+  question text not null,
+  options text[] not null,
+  created_by text references users(id) on delete set null,
+  created_at timestamp default now()
+);
+
+
+create table votes (
+  user_id text references users(id) on delete cascade,
+  poll_id integer references polls(id) on delete cascade,
+  option_index integer not null, -- index in the array
+  voted_at timestamp default now(),
+  primary key (user_id, poll_id) 
+);
