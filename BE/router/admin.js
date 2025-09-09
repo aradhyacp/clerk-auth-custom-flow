@@ -6,4 +6,6 @@ router.get("/test",(rew,res)=>{
         message : "working admin"
     })
 })
+
+
 export default router
