@@ -5,6 +5,8 @@ import { clerkMiddleware } from "@clerk/express";
 import webhookRouter from "./router/webhook.js";
 import adminRouter from "./router/admin.js"
 import userRouter from "./router/user.js"
+import verifyAdminMiddleware from "./middleware/adminMiddleware.js";
+import verifyUserMiddleware from "./middleware/userMiddleware.js";
 
 //the verdict
 
@@ -18,8 +20,8 @@ app.use(clerkMiddleware());
 
 
 app.use('/api/webhook', webhookRouter)
-app.use('/api/admin',adminRouter)
-app.use('/api/user',userRouter)
+app.use('/api/admin',verifyAdminMiddleware,adminRouter)
+app.use('/api/user',verifyUserMiddleware,userRouter)
 
 
 app.get("/", (req, res) => {
