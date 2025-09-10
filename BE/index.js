@@ -1,5 +1,18 @@
+import config from "./config.js";
 import express from "express";
 import cors from "cors";
+import { clerkMiddleware } from "@clerk/express";
+import webhookRouter from "./router/webhook.js";
+import adminRouter from "./router/admin.js"
+import userRouter from "./router/user.js"
+import verifyAdminMiddleware from "./middleware/adminMiddleware.js";
+import verifyUserMiddleware from "./middleware/userMiddleware.js";
+
+//the verdict
+
+const app = express();
+const port = config.PORT || 1337;
+
 import config from "./config.js";
 import { clerkMiddleware } from "@clerk/express";
 import webhookRouter from "./router/webhook.js"
@@ -11,7 +24,11 @@ app.use(express.json());
 app.use(cors());
 app.use(clerkMiddleware());
 
-app.use("/api/webhook",webhookRouter)
+
+app.use('/api/webhook', webhookRouter)
+app.use('/api/admin',verifyAdminMiddleware,adminRouter)
+app.use('/api/user',verifyUserMiddleware,userRouter)
+
 
 app.get("/", (req, res) => {
   res.json({

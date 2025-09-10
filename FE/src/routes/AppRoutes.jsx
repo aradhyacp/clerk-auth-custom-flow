@@ -11,6 +11,7 @@ import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import ProtectedRoutes from "./ProtectedRoutes";
 import NotFound from "@/pages/NotFound";
+import JwtTest from "@/pages/JwtTest";
 
 const AppRoutes = () => {
   const router = createBrowserRouter(
@@ -22,6 +23,7 @@ const AppRoutes = () => {
         <Route element={<ProtectedRoutes />}>
           <Route path="/dashboard" element={<Dashboard />}></Route>
         </Route>
+        <Route path="/jwttest" element={<JwtTest />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </>
     )
