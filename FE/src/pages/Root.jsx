@@ -11,6 +11,7 @@ const Root = () => {
       <Button><Link to="/signup">Go to sign up / register</Link></Button>
       <Button><Link to="/login">Go to Login</Link></Button>
       <Button><Link to="/dashboard">Go to DashBoard</Link></Button>
+      <Button><Link to="/jwttest">Test Jwt here</Link></Button>
     </Card>
     </div>
   )
