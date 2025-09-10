@@ -13,6 +13,12 @@ import verifyUserMiddleware from "./middleware/userMiddleware.js";
 const app = express();
 const port = config.PORT || 1337;
 
+import config from "./config.js";
+import { clerkMiddleware } from "@clerk/express";
+import webhookRouter from "./router/webhook.js"
+
+const app = express();
+const port = config.PORT;
 
 app.use(express.json());
 app.use(cors());

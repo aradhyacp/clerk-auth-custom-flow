@@ -8,6 +8,12 @@ const router = express.Router();
 const WEBHOOK_SECRET = config.WEBHOOK_SECRET;
 const WEBHOOK_SECRET_ROLE = config.WEBHOOK_SECRET_ROLE;
 router.post("/create", async (req, res) => {
+const router = express.Router();
+
+const WEBHOOK_SECRET = config.WEBHOOK_SECRET;
+router.post("/create", async (req, res) => {
+    
+
   if (!WEBHOOK_SECRET) {
     return res.json({
       message: "No sign key found",
@@ -69,12 +75,14 @@ router.post("/create", async (req, res) => {
         {
           id: id,
           email: primaryEmail.email_address,
+
         },
       ]);
       if (insertError) {
         console.log(insertError);
         return res.status(500).json({ error: "Failed to add to supabase" });
       }
+
       await clerkClient.users.updateUserMetadata(id, {
         publicMetadata: { role: "user" },
       });
@@ -88,6 +96,7 @@ router.post("/create", async (req, res) => {
   return res.status(200).json({ message: "Webhook received successfully" });
 });
 
+  
 router.post("/roleUpdate",async (req,res)=>{
     if (!WEBHOOK_SECRET_ROLE) {
     return res.json({
