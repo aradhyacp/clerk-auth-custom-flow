@@ -8,6 +8,10 @@
 ![Backend](https://img.shields.io/badge/backend-Node.js_%7C_Express-339933.svg)
 ![Auth](https://img.shields.io/badge/auth-Clerk-6C47FF.svg)
 ![Database](https://img.shields.io/badge/database-Supabase-3ECF8E.svg)
+![alt text](https://img.shields.io/github/issues/aradhyacp/clerk-auth-custom-flow)
+![alt text](https://img.shields.io/github/forks/aradhyacp/clerk-auth-custom-flow)
+![alt text](https://img.shields.io/github/stars/aradhyacp/clerk-auth-custom-flow)
+
 
 > **A robust full-stack authentication starter kit bridging Clerk Authentication with a custom Node.js backend and Supabase database.**
 
@@ -29,22 +33,30 @@ Many developers struggle with synchronizing external auth providers (like Clerk)
 
 ## ✨ Features
 
-Based on the repository structure, this project includes:
-
-*   **🔐 Custom Authentication:** Full Login and Sign-up flows using Clerk's SDK.
-*   **🛡️ Role-Based Access Control:** Backend middleware (`adminMiddleware.js`, `userMiddleware.js`) to secure routes based on user roles.
-*   **🪝 Webhook Synchronization:** A dedicated webhook endpoint to listen for Clerk events and sync user data to Supabase.
-*   **🔒 Protected Routes:**
-    *   **Frontend:** React components (`ProtectedRoutes.jsx`) that redirect unauthenticated users.
-    *   **Backend:** JWT verification middleware.
-*   **💅 Modern UI:** Built with **Tailwind CSS** and **Shadcn UI** components (Button, Card, Input, etc.).
-*   **🗄️ Database Integration:** Schema and connection setup for Supabase.
-*   **🧪 JWT Testing:** A dedicated page (`JwtTest.jsx`) to debug and inspect tokens.
+| Feature | Description |
+| :--- | :--- |
+| 🔐 **Custom Auth Flow** | seamless integration of Clerk's React SDK for Sign-up, Login, and Session management. |
+| 🪝 **Webhook Synchronization** | robust backend listener (`webhook.js`) that automatically creates/updates users in Supabase when events occur in Clerk. |
+| 🛡️ **RBAC Middleware** | Custom Express middleware (`adminMiddleware.js`, `userMiddleware.js`) to protect API routes based on user roles. |
+| 🧱 **Protected Frontend** | React Higher-Order Components (`ProtectedRoutes.jsx`) that shield pages from unauthenticated access. |
+| 🎨 **Modern UI/UX** | Built with **Tailwind CSS** and **Shadcn UI** components for a sleek, responsive design. |
+| 🧪 **JWT Debugging** | dedicated `JwtTest.jsx` page to inspect tokens and verify backend communication. |
+| 🗄️ **Supabase Integration** | pre-configured database connection and SQL schema for user management. |
 
 ---
 
+## 🛠️ Tech Stack
 
-## 🛠️ Technologies Used
+<div align="center">
+
+| **Category** | **Technologies** |
+| :--- | :--- |
+| **Frontend** | ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white) ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) |
+| **Backend** | ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) ![Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge) |
+| **Auth & DB** | ![Clerk](https://img.shields.io/badge/Clerk-6C47FF?style=for-the-badge&logo=clerk&logoColor=white) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) |
+| **Tools** | ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white) ![NPM](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white) |
+
+</div>
 
 ### Frontend (`/FE`)
 *   **React:** UI Library.
